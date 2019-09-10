@@ -9,7 +9,9 @@ function Joke(props) {
         <h3 className="text-2xl mb-5" style={{display: props.joke.question ? "block" : "none" }}>
           <span className="text-white">Q: </span>{props.joke.question}
         </h3>
-        <p><span className="text-white">A: </span>{props.joke.punchline}</p>
+        <p style={{fontSize: props.joke.question ? "auto" : "1.3rem" }}>
+          <span className="text-white" style={{display: !props.joke.question && "none" }}>A: </span>{props.joke.punchline}
+          </p>
       </div>
     </div>
   );
