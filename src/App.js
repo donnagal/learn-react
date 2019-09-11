@@ -13,7 +13,7 @@ class App extends React.Component {
 
     render() {
 
-      const todoComponents = this.state.todos.map(item => <ToDoItem key={item.id} item={item}/>)
+   const todoComponents = this.state.todos.map(item => <ToDoItem key={item.id} item={item}/>)
     return (
         <div className="container mx-auto m-10 py-10 bg-gray-900">
             {todoComponents}
