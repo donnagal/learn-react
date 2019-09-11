@@ -9,11 +9,17 @@ class App extends React.Component {
         this.state = { 
           todos: todosData,
          }
+         this.handleChange = this.handleChange.bind(this)
+    }
+
+   
+    handleChange(id) {
+        console.log("Changed", id)
     }
 
     render() {
 
-   const todoComponents = this.state.todos.map(item => <ToDoItem key={item.id} item={item}/>)
+   const todoComponents = this.state.todos.map(item => <ToDoItem key={item.id} item={item} handleChange={this.handleChange}/>)
     return (
         <div className="container mx-auto m-10 py-10 bg-gray-900">
             {todoComponents}

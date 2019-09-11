@@ -8,8 +8,9 @@ function ToDoItem(props) {
 
       <p className="md:w-2/3 block text-gray-500 font-bold">
         <input className="mr-2 leading-tight" type="checkbox" 
-        checked={props.item.completed}
-        onChange={() => console.log ("change change chainnn")}/>
+          checked={props.item.completed}
+          onChange={() => props.handleChange(props.item.id)}
+        />
         <span className="text-lg">
           {props.item.text}
         </span>
