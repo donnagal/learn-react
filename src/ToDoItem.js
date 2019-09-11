@@ -9,7 +9,7 @@ function ToDoItem(props) {
       <p className="md:w-2/3 block text-gray-500 font-bold">
         <input className="mr-2 leading-tight" type="checkbox" />
         <span className="text-lg">
-        {props.text}
+        {props.item.text}
         </span>
       </p>
     </div>
