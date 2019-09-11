@@ -1,15 +1,16 @@
 import React from 'react'
-import Joke from './Joke'
-import jokesData from './jokesData'
+import Product from './Product'
+import productsData from './productsData'
 
 function App() {
 
-  const jokeComponents = jokesData.map(joke => <Joke key ={joke.id} question={joke.question} punchline={joke.punchline} />)
-  
+  const productComponents = productsData.map(item => <Product key={item.id} product={item}/>)
+
+
   return (
   <div className="px-10 py-10">
     <div className="lg:flex flex-wrap -mx-2">
-       {jokeComponents}
+       {productComponents}
     </div>
   </div>
   );
