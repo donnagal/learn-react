@@ -24,7 +24,15 @@ class Playlist extends React.Component {
     this.state ={
       open: true
     }
+    this.toggleOpenClosed = this.toggleOpenClosed.bind(this)
   }
+
+  toggleOpenClosed(){
+    this.setState({
+        open: !this.state.open
+      })
+  }
+
   render(){
 
     // const songs = this.props.songs
@@ -36,6 +44,7 @@ class Playlist extends React.Component {
           this.state.open ? 'opened' : 'closed'
         }
       </h1>
+      <button onClick={this.toggleOpenClosed}>Button</button>
           {songs.map(
             (song, i)=> 
               <Song 
