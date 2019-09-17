@@ -19,19 +19,9 @@ const Song = ({title, artist, time}) => {
 }
 
 class Playlist extends React.Component {
-  constructor(props){
-    super(props)
-    this.state ={
-      open: true
-    }
-    this.toggleOpenClosed = this.toggleOpenClosed.bind(this)
-  }
+  state = { open: false}
 
-  toggleOpenClosed(){
-    // this.setState({
-    //     open: !this.state.open
-    //   })
-
+  toggleOpenClosed = () => {
     this.setState(prevState =>({
       open: !prevState.open
     }))
