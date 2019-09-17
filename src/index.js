@@ -7,19 +7,24 @@ let songList = [
   { "title": "Call my name - Spencer Hill Remix", "artist": "Sultan + Shepard", "time": 6.30,},
 ]
 
-const Song = ({title, artist, time}) => {
+const Song = ({title, artist, time, onTour}) => {
   return (
     <section>
       <h2>{title}</h2>
       <p>By: {artist}</p>
       <small>time: {time} </small>
+      <p>On tour: {onTour ? 'yes' : 'no'}</p>
       <hr />
     </section>
   )
 }
 
 class Playlist extends React.Component {
-  state = { open: false}
+
+  state = { 
+    onTour: true,
+    open: true
+  }
 
   toggleOpenClosed = () => {
     this.setState(prevState =>({
@@ -28,8 +33,6 @@ class Playlist extends React.Component {
   }
 
   render(){
-
-    // const songs = this.props.songs
     const { songs } = this.props
     return(
       <div>
@@ -46,6 +49,7 @@ class Playlist extends React.Component {
                 title={song.title} 
                 artist={song.artist} 
                 time={song.time}
+                onTour={this.state.onTour}
                 />
           )}
       </div>
