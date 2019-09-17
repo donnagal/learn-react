@@ -18,22 +18,38 @@ const Song = ({title, artist, time}) => {
   )
 }
 
-//Parent Comp
-const Playlist = ({songs}) => {
-  return(
-    <div>
-        {songs.map(
-          (song, i)=> 
-        <Song 
-          key={i}
-          title={song.title} 
-          artist={song.artist} 
-          time={song.time}
-          />
-        )}
-    </div>
-  )
+class Playlist extends React.Component {
+  constructor(props){
+    super(props)
+    this.state ={
+      open: true
+    }
+  }
+  render(){
+
+    // const songs = this.props.songs
+    const { songs } = this.props
+    return(
+      <div>
+        <h1>
+          The Playlist is {
+          this.state.open ? 'opened' : 'closed'
+        }
+      </h1>
+          {songs.map(
+            (song, i)=> 
+              <Song 
+                key={i}
+                title={song.title} 
+                artist={song.artist} 
+                time={song.time}
+                />
+          )}
+      </div>
+    )
+  }
 }
+
 
 
 render(
