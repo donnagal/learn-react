@@ -28,9 +28,13 @@ class Playlist extends React.Component {
   }
 
   toggleOpenClosed(){
-    this.setState({
-        open: !this.state.open
-      })
+    // this.setState({
+    //     open: !this.state.open
+    //   })
+
+    this.setState(prevState =>({
+      open: !prevState.open
+    }))
   }
 
   render(){
