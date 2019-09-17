@@ -1,41 +1,30 @@
 import React, { Component} from 'react';
 import {render} from 'react-dom';
 
-let skiData = {
-  total: 50,
-  powder: 20,
-  backcountry: 10,
-  goal: 100
-}
-
-
-
-const getPercent = decimal => {
-  return decimal * 100 + '%'
-}
-
-const calcGoalProgress = (total, goal) => {
-  return getPercent(total/goal)
-}
-
-const SkiDayCounter = ({total, powder, backcountry, goal}) => {
-  return(
+const Song = ({title, artist, time}) => {
+  return (
     <section>
-    <p>Total Days: {total}</p>
-    <p>Powder Days: {powder}</p>
-    <p>Backcountry Days: {backcountry}</p>
-    <p>Goal Progress:  {calcGoalProgress(total, goal)}</p>
-  </section>
+      <h2>{title}</h2>
+      <p>By: {artist}</p>
+      <small>time: {time} </small>
+      <hr />
+    </section>
+  )
+}
+
+//Parent Comp
+const Playlist = () => {
+  return(
+    <div>
+     <Song title="Fight for you" artist="Morgan Page" time="3.37"/>
+     <Song title="You can have it All" artist="Zoo Brazil" time="5.36"/>
+     <Song title="Call my name - Spencer Hill Remix" artist="Sultan + Shepard" time="6.30"/>
+    </div>
   )
 }
 
 
 render(
-   <SkiDayCounter 
-      total={skiData.total}
-      powder={skiData.powder}
-      backcountry={skiData.backcountry}
-      goal={skiData.goal}
-   />, 
+   <Playlist/>, 
     document.getElementById("root")
 )
