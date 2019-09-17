@@ -19,11 +19,22 @@ const Song = ({title, artist, time, onTour}) => {
   )
 }
 
+const Hiring = () => 
+  <div>
+    <p>Is hiring</p>
+  </div>
+
+const NotHiring = () => 
+    <div>
+      <p>Is NOT hiring.. check later for more info.</p>
+    </div>
+
 class Playlist extends React.Component {
 
   state = { 
     onTour: true,
-    open: true
+    open: true,
+    hiring: false
   }
 
   toggleOpenClosed = () => {
@@ -36,6 +47,7 @@ class Playlist extends React.Component {
     const { songs } = this.props
     return(
       <div>
+        {this.state.hiring ? <Hiring /> : <NotHiring />}
         <h1>
           The Playlist is {
           this.state.open ? 'opened' : 'closed'
