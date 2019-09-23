@@ -7,10 +7,11 @@ import Footer from "./Footer"
 const theme = {
   primary: 'teal',
   secondary: 'green',
+  font: 'serif',
 };
 
 const Button = styled.button`
-  font-size: 1.8rem;
+  font-family: ${(props) => props.theme.font};
   padding: 0.5rem 1.5rem;
   /* background: ${(props) => (props.primary ? 'red' : 'green')}; */
   background: ${(props) => props.theme.primary};
@@ -20,14 +21,18 @@ const Button = styled.button`
     }
 `;
 
-
+const H1 = styled.h1`
+  font-family: ${(props) => props.theme.font};
+`;
 
 function App() {
   return (
 
       <ThemeProvider theme={theme}>
-        <h1>Heading demo </h1>
+      <div className="mx-auto text-center">
+        <H1>Heading demo </H1>
         <Button> Button </Button>
+      </div>
       </ThemeProvider>
  
   );
