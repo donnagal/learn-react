@@ -1,8 +1,6 @@
 import React from 'react';
-import styled, { ThemeProvider, css } from 'styled-components'
-import Header from "./Header"
-import MainContent from "./MainContent"
-import Footer from "./Footer"
+import styled, { ThemeProvider } from 'styled-components'
+import Button from './elements/Button'
 
 const theme = {
   primary: 'teal',
@@ -11,18 +9,7 @@ const theme = {
   font: 'serif',
 };
 
-const Button = styled.button`
-  font-family: ${(props) => props.theme.font};
-  padding: 0.5rem 1.5rem;
 
-  ${(props) => props.color &&  css `
-    background: ${ props => props.theme[props.color]}
-  `}
-
-    &:hover {
-      opacity: .5;
-    }
-`;
 
 const H1 = styled.h1`
   font-family: ${(props) => props.theme.font};
